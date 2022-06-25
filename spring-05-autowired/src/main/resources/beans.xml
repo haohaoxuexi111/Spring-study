@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd">
+    <!--开启注解的支持-->
+    <context:annotation-config/>
+
+<!--    <bean id="cat" class="com.xiang.pojo.Cat"/>-->
+<!--    <bean id="dog11" class="com.xiang.pojo.Dog"/>-->
+    <!--byName会自动在容器上下文中查找，找到和自己对象set方法后面的值对应的beanid。-->
+    <!--byType会自动在容器上下文中查找，找到和自己对象属性类型相同的bean的class。-->
+<!--    <bean id="people" class="com.xiang.pojo.People" autowire="byName"> -->
+<!--    <bean id="people" class="com.xiang.pojo.People" autowire="byType">-->
+<!--        <property name="name" value="王者荣耀"/>-->
+<!--        <property name="dog" ref="dog"/> 手动装配-->
+<!--        <property name="cat" ref="cat"/>-->
+<!--    </bean>-->
+    <!--beanid要和类中的属性名相同，在类中的属性上面加@Autowired,加了之后可以不要set方法-->
+    <bean id="cat11" class="com.xiang.pojo.Cat"/>
+    <bean id="cat111" class="com.xiang.pojo.Cat"/>
+    <bean id="dog22" class="com.xiang.pojo.Dog"/>
+    <bean id="dog222" class="com.xiang.pojo.Dog"/>
+    <bean id="people" class="com.xiang.pojo.People"/>
+
+</beans>

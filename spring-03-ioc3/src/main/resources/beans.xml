@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+   <!--无参构造方法对象配置-->
+    <!--<bean id="user" class="com.xiang.pojo.User">
+        <property name="name" value="xiang"/>
+    </bean>-->
+    <!--有参构造方法配置-->
+    <!--方法一：下标赋值-->
+<!--    <bean id="user" class="com.xiang.pojo.User">-->
+<!--        <constructor-arg index="0" value="wang"/>-->
+<!--    </bean>-->
+    <!--方法二：类型赋值，不建议使用-->
+<!--    <bean id="user" class="com.xiang.pojo.User">-->
+        <!--type为基本类型直接用，引用类型写全名-->
+<!--        <constructor-arg type="java.lang.String" value="王祥太"/>-->
+<!--    </bean>-->
+    <!--方法三：直接通过参数名设置-->
+    <bean id="user" class="com.xiang.pojo.User">
+        <constructor-arg name="name" value="王祥"/>
+        <!--若变量是引用类型-->
+<!--        <constructor-arg ref="beanone"/>-->
+    </bean>
+    <!--若变量是引用类型-->
+<!--    <bean id="beeanone" class="x.y.ThingOne"/>-->
+<!--    <bean id="userT" class="com.xiang.pojo.UserT"/>-->
+
+    <!--别名，可以通过别名获取到对象-->
+    <alias name="user" alias="user别名"/>
+
+    <!--
+    id:bean的唯一表示，相当于对象名
+    class：bean对象所对应的全限定名：包名+类型
+    name：也是别名，而且name可以同时取多个别名
+    -->
+    <bean id="userT" class="com.xiang.pojo.UserT" name="t1,t2">
+        <property name="name" value="540"/>
+    </bean>
+    <!--依赖注入方式一：构造器注入-->
+<!--    <bean id="exampleBean" class="example.ExampleBean">-->
+<!--        <constructor-arg>-->
+<!--            <ref bean="anotherExampleBean"/>-->
+<!--        </constructor-arg>-->
+<!--        <constructor-arg ref="yetAnotherBean"/>-->
+<!--        <constructor-arg type="int" value="1"/>-->
+<!--    </bean>-->
+<!--    <bean id="yetAnotherBean" class="examples.YetAnotherBean"/>-->
+<!--    <bean id="anotherExampleBean" class="examples.AnotherBean"/>-->
+
+<!--    <bean>-->
+<!--        <property name="id">-->
+<!--            <value>-->
+<!--                -->
+<!--            </value>-->
+<!--        </property>-->
+<!--    </bean>-->
+</beans>
